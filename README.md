@@ -4,9 +4,7 @@ C# API using .net 6
 To run:
 
 ```
-
 dotnet build
-
 
 ```
 
@@ -33,7 +31,7 @@ For the appsettings.json:
 
 ---
 
-##ENDPOINTS
+## ENDPOINTS
 
 <ul>
     <li>/api/author</li>
