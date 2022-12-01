@@ -13,6 +13,6 @@ namespace authorsApi.Model
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
 
-        public virtual Author? Author { get; set; }
+        // public virtual Author? Author { get; set; }
     }
 }

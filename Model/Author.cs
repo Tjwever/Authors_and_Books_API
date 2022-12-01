@@ -17,6 +17,6 @@ namespace authorsApi.Model
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
 
-        public virtual ICollection<Book> Books { get; set; }
+        public ICollection<Book> Books { get; set; }
     }
 }

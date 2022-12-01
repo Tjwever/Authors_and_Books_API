@@ -53,7 +53,7 @@ namespace authorsApi.Controllers
             }
 
             _context.Entry(book).State = EntityState.Modified;
-
+            
             try
             {
                 await _context.SaveChangesAsync();
@@ -71,6 +71,45 @@ namespace authorsApi.Controllers
             }
 
             return NoContent();
+        }
+
+        [HttpPut("{id}/humor")]
+        public async Task<IActionResult> changeGenreToHumor(long id)
+        {
+            // running a check to see if a book exists...more specifically, if the book ID exists
+            var book = await _context.Books.FindAsync(id);
+
+            if (book == null)
+            {
+                return NotFound("This id for this Book was not found");
+            }
+            
+            // creating book item to pull properties from
+            var bookItem = _context.Books.FirstOrDefault(b => b.Id == id);
+            
+            // changing the book genre to "Humor"
+            bookItem.Genre = "Humor";
+            _context.SaveChanges();
+
+            // Running another check
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!BookExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            
+            // returning the OK status response
+            return Ok("--==SUCCESSFULLY CHANGED GENRE TO HUMOR==--");
         }
 
         // POST: api/Book

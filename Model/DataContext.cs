@@ -16,10 +16,10 @@ namespace authorsApi.Model
         {
         }
 
-        public virtual DbSet<ArInternalMetadatum> ArInternalMetadata { get; set; } = null!;
-        public virtual DbSet<Author> Authors { get; set; } = null!;
-        public virtual DbSet<Book> Books { get; set; } = null!;
-        public virtual DbSet<SchemaMigration> SchemaMigrations { get; set; } = null!;
+        public DbSet<ArInternalMetadatum> ArInternalMetadata { get; set; } = null!;
+        public DbSet<Author> Authors { get; set; } = null!;
+        public DbSet<Book> Books { get; set; } = null!;
+        public DbSet<SchemaMigration> SchemaMigrations { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -108,10 +108,10 @@ namespace authorsApi.Model
                     .HasColumnType("datetime")
                     .HasColumnName("updated_at");
 
-                entity.HasOne(d => d.Author)
-                    .WithMany(p => p.Books)
-                    .HasForeignKey(d => d.AuthorId)
-                    .HasConstraintName("fk_rails_53d51ce16a");
+                // entity.HasOne(d => d.Author)
+                //     .WithMany(p => p.Books)
+                //     .HasForeignKey(d => d.AuthorId)
+                //     .HasConstraintName("fk_rails_53d51ce16a");
             });
 
             modelBuilder.Entity<SchemaMigration>(entity =>

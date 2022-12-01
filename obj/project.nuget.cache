@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xrxIAP2hpTHdz0tej+oGz8sAWHKh0aqbhFp4bh2Kd2W2dDrNaCt5NMdUnv3Mjm0q7wXqUUenC8SDTqcEUS/VBg==",
+  "dgSpecHash": "XIJicmSYCAkjzVW+tle88cwlKLHpi9KLl6Itb0hyT7mVsGJGu1pU8mFT9/YnyQBUsmhm2NqpjREJq4v8mcKCyg==",
   "success": true,
-  "projectFilePath": "/home/tjwever/Main/demos/authorsApi/authorsApi.csproj",
+  "projectFilePath": "/home/tjwever/Main/demos/Authors_and_Books_API/authorsApi.csproj",
   "expectedPackageFiles": [
     "/home/tjwever/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/home/tjwever/.nuget/packages/messagepack/2.1.152/messagepack.2.1.152.nupkg.sha512",

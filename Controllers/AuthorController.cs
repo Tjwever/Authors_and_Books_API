@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using authorsApi.Model;
-
+// Include(a => a.Books).
 namespace authorsApi.Controllers
 {
     [Route("api/[controller]")]
@@ -25,8 +25,34 @@ namespace authorsApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Author>>> GetAuthors()
         {
-            return await _context.Authors.ToListAsync();
+            return await _context.Authors.Include(a => a.Books).ToListAsync();
         }
+
+        // This will list every author how has a book with the genre of Humor
+        // GET: api/Author
+        [HttpGet("byhumor")]
+        public async Task<ActionResult<IEnumerable<Author>>> GetAuthorsByGenreHumor()
+        {
+            var authorQueries = 
+            (
+                from author in _context.Authors
+                from book in author.Books
+                where book.Genre == "Humor"
+                select author
+            ).Distinct();
+
+            return authorQueries.ToList();
+        }
+
+        // A simple way of getting a list of authors by a particular location
+        // [HttpGet("location")]
+        // public async Task<ActionResult<IEnumerable<Author>>> GetAuthorsByLocation()
+        // {
+        //     var authorQueries = _context.Authors.Where(a => a.Location == "Peru");
+
+        //     return authorQueries.ToList();
+        // }
+
 
         // GET: api/Author/5
         [HttpGet("{id}")]

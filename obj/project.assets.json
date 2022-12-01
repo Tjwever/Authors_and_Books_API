@@ -9738,11 +9738,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/tjwever/Main/demos/authorsApi/authorsApi.csproj",
+      "projectUniqueName": "/home/tjwever/Main/demos/Authors_and_Books_API/authorsApi.csproj",
       "projectName": "authorsApi",
-      "projectPath": "/home/tjwever/Main/demos/authorsApi/authorsApi.csproj",
+      "projectPath": "/home/tjwever/Main/demos/Authors_and_Books_API/authorsApi.csproj",
       "packagesPath": "/home/tjwever/.nuget/packages/",
-      "outputPath": "/home/tjwever/Main/demos/authorsApi/obj/",
+      "outputPath": "/home/tjwever/Main/demos/Authors_and_Books_API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/tjwever/.nuget/NuGet/NuGet.Config"
