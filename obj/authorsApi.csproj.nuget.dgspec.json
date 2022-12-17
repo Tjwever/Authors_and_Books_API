@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/tjwever/Main/demos/Authors_and_Books_API/authorsApi.csproj": {}
+    "/home/timdog/Main/C_Sharp/Authors_and_Books_API/authorsApi.csproj": {}
   },
   "projects": {
-    "/home/tjwever/Main/demos/Authors_and_Books_API/authorsApi.csproj": {
+    "/home/timdog/Main/C_Sharp/Authors_and_Books_API/authorsApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/tjwever/Main/demos/Authors_and_Books_API/authorsApi.csproj",
+        "projectUniqueName": "/home/timdog/Main/C_Sharp/Authors_and_Books_API/authorsApi.csproj",
         "projectName": "authorsApi",
-        "projectPath": "/home/tjwever/Main/demos/Authors_and_Books_API/authorsApi.csproj",
-        "packagesPath": "/home/tjwever/.nuget/packages/",
-        "outputPath": "/home/tjwever/Main/demos/Authors_and_Books_API/obj/",
+        "projectPath": "/home/timdog/Main/C_Sharp/Authors_and_Books_API/authorsApi.csproj",
+        "packagesPath": "/home/timdog/.nuget/packages/",
+        "outputPath": "/home/timdog/Main/C_Sharp/Authors_and_Books_API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/tjwever/.nuget/NuGet/NuGet.Config"
+          "/home/timdog/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
