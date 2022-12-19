@@ -58,7 +58,7 @@ namespace authorsApi.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Author>> GetAuthor(long id)
         {
-            var author = await _context.Authors.FindAsync(id);
+            var author = await _context.Authors.Include(a => a.Books).SingleOrDefaultAsync(b => b.Id == id);
 
             if (author == null)
             {
