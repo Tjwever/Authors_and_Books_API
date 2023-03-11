@@ -33,7 +33,7 @@ namespace authorsApi.Controllers
         [HttpGet("byhumor")]
         public async Task<ActionResult<IEnumerable<Author>>> GetAuthorsByGenreHumor()
         {
-            var authorQueries = 
+            var authorQueries =
             (
                 from author in _context.Authors
                 from book in author.Books
@@ -114,11 +114,25 @@ namespace authorsApi.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAuthor(long id)
         {
-            var author = await _context.Authors.FindAsync(id);
+            var author = await _context.Authors.Include(a => a.Books).SingleOrDefaultAsync(b => b.Id == id);
+
+            foreach (var books in _context.Books)
+            {
+                if (books.AuthorId == id)
+                {
+                    _context.Books.Remove(books);
+                }
+            }
+            
+            Console.WriteLine("**********************************");
+            Console.WriteLine(author);
+            Console.WriteLine("**********************************");
+
             if (author == null)
             {
                 return NotFound();
             }
+
 
             _context.Authors.Remove(author);
             await _context.SaveChangesAsync();
