@@ -114,6 +114,7 @@ namespace authorsApi.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAuthor(long id)
         {
+            // var author = await _context.Authors.Include(a => a.Books).SingleOrDefaultAsync(b => b.Id == id);
             var author = await _context.Authors.FindAsync(id);
             if (author == null)
             {
